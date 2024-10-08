@@ -1,7 +1,7 @@
 # REDUCR: ROBUST DATA DOWNSAMPLING USING CLASS PRIORITY REWEIGHTING
 | **[Abstract](#abstract)**
 | **[Installation](#installation)**
-| **[Codebase](#codebase)**
+| **[Codebase](#codebase)** |
 
 [![arXiv](https://img.shields.io/badge/arXiv-2106.02584-b31b1b.svg)](https://arxiv.org/abs/2206.07137)
 [![Python 3.8](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-Here we present the code for our paper REDUCR: Robust data-downsampling using class priority reweighting. Our additions are implemented on top of the code provided for [Mindermann et al. 2022](https://github.com/OATML/RHO-Loss).
+Here we present the code for our paper [REDUCR: Robust data-downsampling using class priority reweighting](https://arxiv.org/abs/2312.00486). Our additions are implemented on top of the code provided for [Mindermann et al. 2022](https://github.com/OATML/RHO-Loss).
 
 ## Abstract
 Modern machine learning models are becoming increasingly expensive to train for real-world image and text classification tasks, where massive web-scale data is collected in a streaming fashion. To reduce the training cost, online batch selection techniques have been developed to choose the most informative datapoints. However, these techniques can suffer from poor worst-class generalization performance due to class imbalance and distributional shifts. This work introduces REDUCR, a robust and efficient data downsampling method that uses class priority reweighting. REDUCR reduces the training data while preserving worst-class generalization performance. REDUCR assigns priority weights to datapoints in a class-aware manner using an online learning algorithm. We demonstrate the data efficiency and robust performance of REDUCR on vision and text classification tasks. On web-scraped datasets with imbalanced class distributions, REDUCR achieves significant test accuracy boosts for the worst-performing class (but also on average), surpassing state-of-the-art methods by around 14%.
