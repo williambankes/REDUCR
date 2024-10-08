@@ -1,0 +1,9 @@
+_target_: src.curricula.selection_methods.weighted_reducible_loss_selection
+
+#should be overriden within the respective experiment script 
+num_categories: null
+weights: null 
+
+#standard params
+sampling_method: top_x_indices
+beta: 1

@@ -1,0 +1,12 @@
+model_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: "worst_val_acc" # name of the logged metric which determines when model is improving
+  mode: "max" # can be "max" or "min"
+  save_top_k: 1 # save k best models (determined by above metric)
+  verbose: False
+  dirpath: "."
+  filename: "epoch_{epoch:03d}"
+  auto_insert_metric_name: False
+
+#early stopping and logging image predictions during training can be found in default.yaml 
+

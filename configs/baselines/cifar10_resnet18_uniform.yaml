@@ -1,0 +1,24 @@
+# @package _global_
+
+defaults:
+  - /scheduler : cosine_annealing.yaml
+  - override /model/large_model: cifar_resnet.yaml
+  - override /datamodule: cifar10_datamodule.yaml
+  - override /selection_method: uniform_selection
+  - override /optimizer: sgd.yaml
+
+model:
+  percent_train: 1
+
+trainer:
+  max_epochs: 175
+  gpus: 0 
+
+datamodule:
+  data_dir: 'C:\Users\William\Documents\Programming\PhD\Datasets\'
+  batch_size: 128
+
+logger:
+  wandb:
+    project: "baselines-CIFAR10"
+    tags: ['CIFAR10', 'sgd', 'cosineannealing', 'uniform']

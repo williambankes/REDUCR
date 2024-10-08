@@ -1,0 +1,17 @@
+#Important that this is first in the config file
+wandb_key:
+
+wandb:
+  _target_: pytorch_lightning.loggers.wandb.WandbLogger
+  project: null
+  name: null
+  save_dir: "."
+  offline: False # set True to store all logs only locally alternate False
+  id: null # pass correct id to resume experiment!
+  entity: william_bankes 
+  log_model: False
+  prefix: ""
+  job_type: "train"
+  group: ""
+  tags: []
+

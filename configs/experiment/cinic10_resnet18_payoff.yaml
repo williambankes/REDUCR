@@ -1,0 +1,28 @@
+# @package _global_
+
+defaults:
+  - override /model/large_model: cifar_resnet.yaml
+  - override /datamodule: cinic10_datamodule
+  - override /selection_method: robust_payoff_selection.yaml
+  
+model:
+  percent_train: 0.1
+  run_test_eval: true
+
+trainer:
+  min_epochs: 1
+  max_epochs: 150
+  gpus: 0 
+
+#Setup for running on the GCP setup
+datamodule:
+  data_dir: "."
+  batch_size: 320
+
+logger:
+  wandb:
+    project: "RobustRHO-CINICFinalResults"
+    tags: ['CINIC10', 'payoff']
+
+selection_method:
+  num_categories: 10

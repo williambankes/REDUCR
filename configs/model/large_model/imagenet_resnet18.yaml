@@ -1,0 +1,2 @@
+_target_: src.models.modules.c1m_pretrained.resnet18_imagenet
+classes: 14

@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - override /model/model: cifar_resnet.yaml
+  - override /datamodule: cinic10_datamodule.yaml
+  - override /callbacks: val_loss.yaml
+
+datamodule:
+  data_dir: 'C:\Users\William\Documents\Programming\PhD\Datasets\'
+
+trainer:
+  max_epochs: 100
+
+logger:
+  wandb:
+    project: "RobustRHO-CINICFinalResults"
+    tags: ['CINIC10', 'Irred']

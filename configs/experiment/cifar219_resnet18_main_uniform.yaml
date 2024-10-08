@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - override /model/large_model: cifar_resnet.yaml
+  - override /datamodule: cifar2_datamodule.yaml
+  - override /selection_method: uniform_selection.yaml
+
+trainer:
+  max_epochs: 175
+  gpus: 1
+
+datamodule:
+  data_dir: 'C:\Users\William\Documents\Programming\PhD\Datasets\'
+  datamodule_name: CIFAR2DataModule19
+  batch_size: 320
+  classes: [1,9]
+  
+logger:
+  wandb:
+    project: "Robust RHO Parallel Runs"
+    tags: ['CIFAR2', 'Uniform', 'Classes 19']

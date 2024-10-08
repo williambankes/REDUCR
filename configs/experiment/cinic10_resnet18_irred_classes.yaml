@@ -1,0 +1,24 @@
+# @package _global_
+
+defaults:
+  - override /model/model: cifar_resnet.yaml
+  - override /datamodule: cinic10_datamodule.yaml
+  - override /callbacks: val_loss.yaml
+
+trainer:
+  max_epochs: 100
+  gpus: 0
+
+datamodule:
+  data_dir: 'C:\Users\William\Documents\Programming\PhD\Datasets\'
+  batch_size: 320
+
+logger:
+  wandb:
+    project: "RobustRHO-CINIC"
+    tags: ['CINIC10', 'Irred', 'classes'] 
+
+sampler_factory:
+  imbalanced_class: null
+  class_percentage: 0.5
+  weights: null

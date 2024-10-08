@@ -1,0 +1,36 @@
+# @package _global_
+# line above ensures that the experiment overrides root settings:
+# we need this so our configs affect the global/root config. it has to be the first line in the file
+
+defaults:
+  - /scheduler: linear.yaml
+  - override /model: multi_model_nlp.yaml
+  - override /model/large_model: nlp_GLUETransformer.yaml
+  - override /datamodule: MNLIDataModule.yaml
+  - override /callbacks: val_loss.yaml
+  - override /selection_method: uniform_selection.yaml
+
+trainer:
+  max_epochs: 20 
+  gpus: 0
+
+model:
+  large_model:
+    model_name_or_path: 'bert-base-uncased'
+  percent_train: 1.0
+  scheduler_step_on_step: True #update the scheduler on the step
+
+datamodule:
+  data_dir: 'C:\Users\William\Documents\Programming\PhD\Datasets\'
+  batch_size: 32
+  stage: 'fit'
+
+optimizer:
+  weight_decay: 0.0
+  lr: 0.00002
+
+logger:
+  wandb:
+    project: "RobustRHO-NLP"
+    tags: ['MNLI', 'uniform', 'full']
+

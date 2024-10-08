@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - override /model/model: cifar_resnet.yaml
+  - override /datamodule: cifar2_datamodule.yaml
+  - override /callbacks: val_loss.yaml
+
+trainer:
+  max_epochs: 100
+  gpus: 1
+
+datamodule:
+  data_dir: 'C:\Users\William\Documents\Programming\PhD\Datasets\'
+  datamodule_name: CIFAR2DataModule23
+  batch_size: 320
+  classes: [2,3]
+  
+logger:
+  wandb:
+    project: "Robust RHO Parallel Runs"
+    tags: ['CIFAR2', 'Irred', 'Classes 23']

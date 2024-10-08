@@ -1,0 +1,5 @@
+_target_: src.curricula.selection_methods.robust_reducible_loss_selection
+
+#should be overriden depending on the dataset used
+num_categories: null
+eta: 1

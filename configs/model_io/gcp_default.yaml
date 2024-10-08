@@ -1,0 +1,7 @@
+_target_: src.utils.io_utils.IOFactory
+
+env: gcp
+imbalanced: False #remove this variable entirely
+number: 1
+gcp_project: robust-active-subsampling
+gcp_storage: gs://robust-active-subsampling-xmanager-test-bucket

@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - override /model/model: cifar_resnet.yaml
+  - override /datamodule: cifar10_datamodule.yaml
+  - override /callbacks: val_loss_hpc.yaml
+
+trainer:
+  max_epochs: 100
+
+datamodule:
+  data_dir: "/home/wbankes/data/"
+  batch_size: 320
+
+logger:
+  wandb:
+    project: "Robust RHO Parallel Runs"

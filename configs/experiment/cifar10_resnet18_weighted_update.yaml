@@ -1,0 +1,29 @@
+# @package _global_
+
+defaults:
+  - override /model/large_model: cifar_resnet.yaml
+  - override /datamodule: cifar10_datamodule.yaml
+  - override /selection_method: weighted_reducible_loss_selection.yaml
+  
+model:
+  percent_train: 0.1
+
+trainer:
+  max_epochs: 175
+  gpus: 0 
+
+datamodule:
+  data_dir: 'C:\Users\William\Documents\Programming\PhD\Datasets\'
+  batch_size: 320
+
+irreducible_loss_generator:
+  update_irreducible: True
+
+logger:
+  wandb:
+    project: "Robust RHO Parallel Runs"
+    tags: ['CIFAR10', 'weighted_reducible_loss_selection', 'update']
+
+selection_method:
+  num_categories: 10
+  weights: [0, 0, 0, 1, 0, 0, 0, 0, 0, 0]

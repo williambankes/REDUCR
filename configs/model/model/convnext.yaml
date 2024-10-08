@@ -1,0 +1,2 @@
+_target_: src.models.modules.vision_transformers.ConvNexT
+num_labels: 14

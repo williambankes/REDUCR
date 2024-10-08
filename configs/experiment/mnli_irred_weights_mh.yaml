@@ -1,0 +1,32 @@
+# @package _global_
+# line above ensures that the experiment overrides root settings:
+# we need this so our configs affect the global/root config. it has to be the first line in the file
+
+defaults:
+  - override /model/model: nlp_TransformerMultiHead.yaml
+  - override /datamodule: MNLIDataModule.yaml
+  - override /callbacks: val_loss.yaml
+ 
+trainer:
+  max_epochs: 1 
+
+model:
+  model:
+    model_name_or_path: 'bert-base-uncased'
+
+  gradient_weight: 10
+  multi_headed_model: true  
+
+datamodule:
+  data_dir: 'C:\Users\William\Documents\Programming\PhD\Datasets\'
+  batch_size: 32
+  stage: 'fit'
+
+optimizer:
+  weight_decay: 0.0
+  lr: 0.000001
+
+logger:
+  wandb:
+    project: "MNLI-Results"
+    tags: ['MNLI', 'irred', 'classes']
